@@ -133,7 +133,9 @@
 .time {
   display: flex;
 
-  align-items: center;
+  /* Align items on their text baseline so the colon lines up with the numbers */
+  align-items: baseline;
+
   justify-content: center;
 }
 

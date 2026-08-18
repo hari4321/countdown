@@ -38,6 +38,7 @@ export class CounterComponent implements OnInit, OnDestroy {
   private startTime = 0;
   private endTime = 0;
   private timerId: ReturnType<typeof setInterval> | null = null;
+  private lastRemainingSeconds = -1;
 
   /*
    * Keeps track of alerts that have already been played.
@@ -109,6 +110,9 @@ export class CounterComponent implements OnInit, OnDestroy {
     // Calculate an absolute end time so the timer doesn't drift.
     this.endTime = performance.now() + this.remainingMilliseconds;
 
+    // Initialize lastRemainingSeconds so we don't trigger alerts immediately on start.
+    this.lastRemainingSeconds = Math.floor(this.remainingMilliseconds / 1000);
+
     /*
      * Run frequently so that the progress ring looks smooth.
      *
@@ -139,7 +143,13 @@ export class CounterComponent implements OnInit, OnDestroy {
      * Check whether any alert has been reached.
      */
 
-    this.checkAlerts();
+    const previousSeconds = this.lastRemainingSeconds;
+
+    const currentSeconds = Math.floor(this.remainingMilliseconds / 1000);
+
+    this.checkAlerts(previousSeconds, currentSeconds);
+
+    this.lastRemainingSeconds = currentSeconds;
 
     /*
      * Tell Angular to update the screen.
@@ -221,13 +231,7 @@ export class CounterComponent implements OnInit, OnDestroy {
   // ALERTS
   // ============================================================
 
-  private checkAlerts(): void {
-    /*
-     * Convert remaining time into whole seconds.
-     */
-
-    const remainingSeconds = Math.ceil(this.remainingMilliseconds / 1000);
-
+  private checkAlerts(previousSeconds: number, currentSeconds: number): void {
     for (const alert of this.alerts) {
       /*
        * Ignore disabled alerts.
@@ -237,26 +241,13 @@ export class CounterComponent implements OnInit, OnDestroy {
         continue;
       }
 
-      /*
-       * Convert the alert into seconds.
-       */
+      let alertSeconds = alert.unit === 'minutes' ? alert.value * 60 : alert.value;
 
-      let alertSeconds = 0;
+      const crossed =
+        (previousSeconds > alertSeconds && currentSeconds <= alertSeconds) ||
+        (previousSeconds === alertSeconds && currentSeconds < alertSeconds);
 
-      if (alert.unit === 'minutes') {
-        alertSeconds = alert.value * 60;
-      } else {
-        alertSeconds = alert.value;
-      }
-
-      /*
-       * Check if we crossed the alert threshold.
-       */
-
-      if (
-        remainingSeconds <= alertSeconds &&
-        !this.triggeredAlerts.has(alert.id)
-      ) {
+      if (crossed && !this.triggeredAlerts.has(alert.id)) {
         /*
          * Remember that this alert has already fired.
          */
