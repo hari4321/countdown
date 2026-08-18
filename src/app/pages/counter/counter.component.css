@@ -1,0 +1,265 @@
+/* ============================================================
+   HOST
+   ============================================================ */
+
+:host {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   COUNTER
+   ============================================================ */
+
+.counter {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+
+.timer {
+  position: relative;
+
+  /*
+   * The circle will always fit inside the viewport.
+   */
+
+  width: min(88vh, 88vw);
+
+  height: min(88vh, 88vw);
+}
+
+/* ============================================================
+   SVG PROGRESS RING
+   ============================================================ */
+
+.progress-ring {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+   * SVG normally starts at the right side.
+   *
+   * Rotate it so the countdown starts
+   * from the top.
+   */
+
+  transform: rotate(-90deg);
+
+  overflow: visible;
+}
+
+/* ============================================================
+   BACKGROUND RING
+   ============================================================ */
+
+.progress-track {
+  fill: none;
+
+  stroke: #f1f1f1;
+
+  stroke-width: 20;
+}
+
+/* ============================================================
+   ACTIVE RED RING
+   ============================================================ */
+
+.progress-value {
+  fill: none;
+
+  stroke: #ef2028;
+
+  stroke-width: 20;
+
+  stroke-linecap: round;
+
+  /*
+   * Small transition so the movement looks smooth.
+   */
+
+  transition: stroke-dasharray 0.05s linear;
+}
+
+/* ============================================================
+   TIMER CENTER
+   ============================================================ */
+
+.timer-content {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   TIME
+   ============================================================ */
+
+.time {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   TIME UNIT
+   ============================================================ */
+
+.time-unit {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.number {
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  /*
+   * Large presentation-style number.
+   */
+
+  font-size: clamp(90px, 12vw, 190px);
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+
+  color: #111111;
+
+  /*
+   * Prevent the numbers from changing width.
+   */
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   COLON
+   ============================================================ */
+
+.colon {
+  margin: 0 clamp(15px, 2vw, 32px);
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: clamp(80px, 11vw, 175px);
+
+  font-weight: 300;
+
+  line-height: 0.8;
+
+  color: #111111;
+}
+
+/* ============================================================
+   LABEL
+   ============================================================ */
+
+.label {
+  margin-top: 30px;
+
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.2em;
+
+  color: #777b82;
+}
+
+/* ============================================================
+   LARGE DESKTOP
+   ============================================================ */
+
+@media (min-width: 1600px) {
+  .timer {
+    width: 850px;
+    height: 850px;
+  }
+}
+
+/* ============================================================
+   SMALLER DESKTOP
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .timer {
+    width: 85vw;
+    height: 85vw;
+  }
+}
+
+/* ============================================================
+   MOBILE / SMALL SCREEN
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .timer {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .number {
+    font-size: 20vw;
+  }
+
+  .colon {
+    font-size: 18vw;
+
+    margin: 0 3vw;
+  }
+
+  .label {
+    margin-top: 18px;
+
+    font-size: 10px;
+  }
+}

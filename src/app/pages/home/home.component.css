@@ -1,0 +1,916 @@
+/* ============================================================
+   HOST
+   ============================================================ */
+
+:host {
+  display: block;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+button,
+select {
+  font: inherit;
+}
+
+
+/* ============================================================
+   HOMEPAGE
+   ============================================================ */
+
+.homepage {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  background: #ffffff;
+
+  color: #111111;
+
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.content {
+
+  width: 756px;
+
+  max-width:
+    calc(100vw - 40px);
+
+  padding-top: 70px;
+
+  padding-bottom: 60px;
+
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+
+  text-align: center;
+
+}
+
+
+.header h1 {
+
+  margin: 0;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 54px;
+
+  line-height: 1.1;
+
+  font-weight: 300;
+
+  letter-spacing: -0.035em;
+
+  color: #111111;
+
+}
+
+
+.header p {
+
+  margin:
+    14px
+    0
+    0;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 24px;
+
+  line-height: 1.4;
+
+  font-weight: 300;
+
+  color: #747982;
+
+}
+
+
+/* ============================================================
+   SET TIME
+   ============================================================ */
+
+.time-section {
+
+  margin-top: 52px;
+
+}
+
+
+.section-title {
+
+  text-align: center;
+
+  margin-bottom: 18px;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  color: #70747c;
+
+}
+
+
+/* ============================================================
+   TIME PICKER
+   ============================================================ */
+
+.time-picker {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 18px;
+
+}
+
+
+.time-column {
+
+  width: 218px;
+
+  text-align: center;
+
+}
+
+
+/* ============================================================
+   STEPPER
+   ============================================================ */
+
+.stepper {
+
+  height: 135px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #dedfe1;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+}
+
+
+.stepper-value {
+
+  flex: 1;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 88px;
+
+  line-height: 1;
+
+  font-weight: 300;
+
+  letter-spacing: -0.05em;
+
+  color: #111418;
+
+  font-variant-numeric:
+    tabular-nums;
+
+}
+
+
+.stepper-controls {
+
+  width: 46px;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.step-button {
+
+  width: 38px;
+
+  height: 42px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.step-button:hover {
+
+  background: #f7f7f7;
+
+  border-radius: 7px;
+
+}
+
+
+/* ============================================================
+   CHEVRONS
+   ============================================================ */
+
+.chevron {
+
+  width: 10px;
+
+  height: 10px;
+
+  border-right:
+    2px solid #90959c;
+
+  border-bottom:
+    2px solid #90959c;
+
+  display: block;
+
+}
+
+
+.chevron.up {
+
+  transform:
+    rotate(225deg);
+
+}
+
+
+.chevron.down {
+
+  transform:
+    rotate(45deg);
+
+}
+
+
+/* ============================================================
+   TIME LABEL
+   ============================================================ */
+
+.time-label {
+
+  margin-top: 13px;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: 0.06em;
+
+  color: #5f636a;
+
+}
+
+
+/* ============================================================
+   COLONS
+   ============================================================ */
+
+.time-separator {
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 52px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  color: #111111;
+
+  margin-top: 30px;
+
+}
+
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.divider {
+
+  height: 1px;
+
+  width: 100%;
+
+  background: #dedfe1;
+
+  margin-top: 40px;
+
+}
+
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+
+.alerts-section {
+
+  margin-top: 37px;
+
+}
+
+
+.alerts-title {
+
+  margin-bottom: 18px;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  color: #70747c;
+
+}
+
+
+/* ============================================================
+   ALERT BOX
+   ============================================================ */
+
+.alerts-box {
+
+  width: 100%;
+
+  border:
+    1px solid #dedfe1;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+}
+
+
+/* ============================================================
+   ALERT ROW
+   ============================================================ */
+
+.alert-row {
+
+  min-height: 74px;
+
+  padding:
+    0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid #e5e5e5;
+
+}
+
+
+/* ============================================================
+   CHECKBOX
+   ============================================================ */
+
+.checkbox {
+
+  width: 23px;
+
+  height: 23px;
+
+  flex:
+    0 0 23px;
+
+  padding: 0;
+
+  border:
+    1px solid #d2d4d7;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.checkbox.checked {
+
+  background: #ef1f27;
+
+  border-color: #ef1f27;
+
+  color: #ffffff;
+
+}
+
+
+.checkmark {
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+}
+
+
+/* ============================================================
+   ALERT TEXT
+   ============================================================ */
+
+.alert-text {
+
+  width: 156px;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 18px;
+
+  color: #17191c;
+
+}
+
+
+/* ============================================================
+   ALERT SELECT
+   ============================================================ */
+
+.alert-select {
+
+  width: 153px;
+
+  height: 45px;
+
+  padding:
+    0 15px;
+
+  border:
+    1px solid #dedfe1;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #17191c;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  outline: none;
+
+}
+
+
+.alert-select:focus {
+
+  border-color: #bfc2c6;
+
+}
+
+
+/* ============================================================
+   UNIT SELECT
+   ============================================================ */
+
+.unit-select {
+
+  width: 120px;
+
+  height: 45px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #17191c;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  outline: none;
+
+}
+
+
+/* ============================================================
+   DELETE
+   ============================================================ */
+
+.delete-button {
+
+  margin-left: auto;
+
+  width: 35px;
+
+  height: 35px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #8a8f96;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.delete-button:hover {
+
+  color: #ef1f27;
+
+  background: #fff4f4;
+
+  border-radius: 7px;
+
+}
+
+
+/* ============================================================
+   ADD ALERT
+   ============================================================ */
+
+.add-alert-container {
+
+  padding:
+    15px 17px;
+
+}
+
+
+.add-alert {
+
+  width: 100%;
+
+  height: 45px;
+
+  border:
+    1px dashed #d7d9dc;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  font-size: 18px;
+
+  color: #17191c;
+
+}
+
+
+.add-alert:hover {
+
+  background: #fafafa;
+
+}
+
+
+/* ============================================================
+   PLUS
+   ============================================================ */
+
+.plus {
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 200;
+
+  color: #777c83;
+
+}
+
+
+/* ============================================================
+   START BUTTON
+   ============================================================ */
+
+.start-button {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  width: 395px;
+
+  height: 70px;
+
+  margin:
+    30px
+    auto
+    0;
+
+  border: 0;
+
+  border-radius: 40px;
+
+  background: #ef2028;
+
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px
+    rgba(239, 32, 40, 0.20);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+
+}
+
+
+.start-button:hover {
+
+  background: #e71921;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(239, 32, 40, 0.25);
+
+}
+
+
+.start-button:active {
+
+  transform:
+    translateY(1px);
+
+}
+
+
+/* ============================================================
+   PLAY ICON
+   ============================================================ */
+
+.play-icon {
+
+  width: 0;
+
+  height: 0;
+
+  border-top:
+    11px solid transparent;
+
+  border-bottom:
+    11px solid transparent;
+
+  border-left:
+    16px solid #ffffff;
+
+  display: block;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  .content {
+
+    max-width:
+      calc(100vw - 30px);
+
+    padding-top: 40px;
+
+  }
+
+
+  .header h1 {
+
+    font-size: 40px;
+
+  }
+
+
+  .header p {
+
+    font-size: 19px;
+
+  }
+
+
+  .time-picker {
+
+    gap: 7px;
+
+  }
+
+
+  .time-column {
+
+    width: 30%;
+
+  }
+
+
+  .stepper {
+
+    height: 110px;
+
+  }
+
+
+  .stepper-value {
+
+    font-size: 60px;
+
+  }
+
+
+  .time-separator {
+
+    font-size: 40px;
+
+  }
+
+
+  .alert-row {
+
+    gap: 10px;
+
+    padding:
+      0 12px;
+
+  }
+
+
+  .alert-text {
+
+    width: auto;
+
+    flex: 1;
+
+  }
+
+
+  .alert-select {
+
+    width: 90px;
+
+  }
+
+
+  .unit-select {
+
+    width: 80px;
+
+  }
+
+
+  .start-button {
+
+    width: 100%;
+
+  }
+
+}

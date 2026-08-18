@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ============================================================
+   GLOBAL RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   HTML / BODY
+   ============================================================ */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+body {
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  /*
+   * Do NOT use overflow: hidden here.
+   *
+   * The homepage needs to be scrollable when its
+   * content exceeds the viewport.
+   */
+}
+
+
+/* ============================================================
+   ANGULAR ROOT
+   ============================================================ */
+
+app-root {
+  display: block;
+
+  width: 100%;
+
+  min-height: 100vh;
+}
